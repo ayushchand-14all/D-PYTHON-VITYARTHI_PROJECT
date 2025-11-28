@@ -193,6 +193,22 @@ It also demonstrates structured coding and modular design.
 
 ---
 
-10. Conclusion
+9. NON FUNCTIONAL REQUIREMENTS:
+    
+    1. Performance
+The Mastermind application should achieve a response time of less than 1 second for game actions, ensuring that users can interact seamlessly without delays. The system must efficiently support up to 500 simultaneous players, providing a smooth gaming experience even during peak usage.
+
+2. Security
+To safeguard user data and game integrity, the application must implement strong security protocols. This includes secure user authentication, data encryption during transmission, and regular security assessments to identify and address potential vulnerabilities, ensuring a safe environment for all players.
+
+3. Usability
+The user interface of the Mastermind game should be designed for ease of use, allowing players of all skill levels to engage without confusion. Clear instructions, intuitive navigation, and responsive design must be incorporated to enhance the overall user experience and encourage player retention.
+
+4. Scalability
+The system architecture should be designed to scale efficiently, accommodating an increasing number of users and game sessions without compromising performance. This includes the ability to add resources dynamically as user demand grows, ensuring that the application remains responsive as its user base expands.
+
+
+
+11. Conclusion
 
 The Numerical Mastermind project is a simple yet effective example of applying core Python concepts to create a fully functional game. <br> It enhances logical reasoning, promotes clean coding practices, and demonstrates how user interaction can be handled effectively in a terminal environment.
