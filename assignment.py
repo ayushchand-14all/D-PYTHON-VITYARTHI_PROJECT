@@ -1,13 +1,13 @@
 import random
 from collections import Counter
 
-def generate_key():
+def g():
     # Generate a random 4-digit number with unique digits
     digits = list("0123456789")
     key = "".join(random.sample(digits, 4))
     return key
 
-def validate_guess(guess):
+def check(guess):
     # Check guess validity: 4 digits, no repeats
     if len(guess) != 4:
         return "Guess must be 4 digits."
@@ -17,7 +17,7 @@ def validate_guess(guess):
         return "Digits must not repeat."
     return None
 
-def get_feedback(key, guess):
+def count_key(key, guess):
     # Count correct positions
     positions = sum(1 for k, g in zip(key, guess) if k == g)
 
@@ -38,11 +38,11 @@ def display_history(history):
             print(f"  {entry['guess']} -> position:{entry['pos']} exist:{entry['exist']}")
     print("-----------------------------\n")
 
-def play_mastermind():
+def start():
     print("Numerical Mastermind (4 digits, no repeats)\n")
 
     # Random secret key
-    key = generate_key()
+    key = g()
 
     history = []
 
@@ -51,7 +51,7 @@ def play_mastermind():
         display_history(history)
 
         guess = input(f"Guess {attempt}: ").strip()
-        err = validate_guess(guess)
+        err = check(guess)
         if err:
             print(err)
             continue
@@ -60,7 +60,7 @@ def play_mastermind():
             print(f"\nCorrect! The key was {key}")
             return
 
-        pos, exist = get_feedback(key, guess)
+        pos, exist = count_key(key, guess)
 
         history.append({
             "guess": guess,
@@ -71,5 +71,6 @@ def play_mastermind():
     print("\nGame Over!")
     print("The key was:", key)
 
-play_mastermind()
+start()
+
 
